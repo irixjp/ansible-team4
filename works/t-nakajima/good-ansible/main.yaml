@@ -1,2 +1,7 @@
 ---
 - include: set_repo.yaml
+- include: deploy_haproxy.yaml
+- include: deploy_tomcat.yaml
+- include: put_index.html.yaml
+- include: deploy_postgres.yaml
+- include: deploy_apache.yaml
