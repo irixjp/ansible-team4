@@ -1,5 +1,11 @@
 Ansible Team 4 Repository.
 
+How to Clone
+
+```
+$ git clone https://github.com/irixjp/ansible-team4
+```
+
 How to Add/Change
 
 ```
