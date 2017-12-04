@@ -1,4 +1,5 @@
 Ansible Team 4 Repository.
+worksディレクトリを作業用に作成していますので、そこに各アカウント名のディレクトリを作成して作業してください。
 
 How to Clone
 
