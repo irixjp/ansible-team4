@@ -1,0 +1,52 @@
+---
+# Bad ansible! This playbook is an example of poor/bad practices!
+# Bad practices may include:
+#
+#   Poor formatting and structure
+#   Poor use of YAML - but good enough to parse
+#   Inconsistent style
+#   Incorrect use of modules
+#   Poor module choice
+#   Unclear names
+#   Hard coding / poor use of variables
+#   Roles - what are roles?
+#   Bare variables
+#   No use of handlers
+
+#- name: configuration
+#  hosts: all
+#  gather_facts: false # remove later! speeds up testing
+#  become: true
+
+#  tasks:
+  - name: enable repos
+    template:
+      src: ./open_three-tier-app.repo
+      dest: /etc/yum.repos.d/open_three-tier-app.repo
+      mode: 0644
+
+#- name: deploy haproxy
+#  hosts: frontends
+#  gather_facts: false # remove later! speeds up testing
+#  become: true
+
+#  tasks:
+  - name: http
+    package:
+      name: httpie
+      state: latest
+  - name: install HAProxy
+    yum:
+      name=haproxy state=latest
+  - name: enable HAProxy
+    service:
+      name: haproxy
+      state: started
+  - name: configure haproxy
+    template:
+      src: ./haproxy.cfg.j2
+      dest: /etc/haproxy/haproxy.cfg
+    notify: restart HAproxy
+
+
+

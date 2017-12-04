@@ -1,0 +1,11 @@
+---
+- name: role test
+  hosts: all
+  roles:
+    - rolea
+- name: role test2
+  hosts: apps
+  roles:
+    - roleb
+    - rolec
+    - roled
