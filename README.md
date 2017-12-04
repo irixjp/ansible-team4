@@ -7,10 +7,16 @@ How to Clone
 $ git clone https://github.com/irixjp/ansible-team4
 ```
 
+How to Update Local Repository
+
+```
+$ git pull
+```
+
 How to Add/Change
 
 ```
-$ git add . # 新規ファイル作成時のみ実行
+$ git add . # 新規ファイル/ディレクトリ作成時のみ実行
 $ git commit -am "added" # コミット時のメッセージ入力
 $ git push
 Username for 'https://github.com': USERNAME
