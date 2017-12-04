@@ -14,6 +14,7 @@
 #   No use of handlers
 
 - name: configuration
+  tags: configuration
   hosts: all
   gather_facts: false # remove later! speeds up testing
   become: true
@@ -21,6 +22,7 @@
    - { role: "./roles/base_configure" } 
 
 - name: deploy postgres
+  tags: postgres
   hosts: appdbs
   gather_facts: true
   become: true
@@ -29,27 +31,23 @@
 
 
 - name: deploy tomcat
+  tags: tomcat
   hosts: apps
   gather_facts: false
   become: true
   roles:
    - { role: "./roles/tomcat" }
 
-- name: index.html on app 1
-  hosts: app1
+- name: index.html on app
+  tags: app
+  hosts: apps
   gather_facts: false
   become: true
   roles:
-   - { role: "./roles/app1" }
-
-- name: index.html on app 1
-  hosts: app2
-  gather_facts: false
-  become: true
-  roles:
-   - { role: "./roles/app2" }
+   - { role: "./roles/app" }
 
 - name: deploy apache
+  tags: apache
   hosts: apps
   gather_facts: false
   become: true
@@ -58,6 +56,7 @@
 
 
 - name: deploy haproxy
+  tags: haproxy
   hosts: frontends
   gather_facts: false # remove later! speeds up testing
   become: true
