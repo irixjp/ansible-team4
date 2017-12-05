@@ -3,7 +3,8 @@ user_info:
   - name: james
     firstname: James
     surname: Jockey
-    password: redhat@123
+    password: "{{encrypted}}"
+   # password: redhat@123
 
   - name: bill
     firstname: Bill

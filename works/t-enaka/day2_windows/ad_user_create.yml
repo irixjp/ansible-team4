@@ -2,5 +2,8 @@
 
 - name: Create Windows AD User
   hosts: windows
+  vars_files:
+    - roles/win_ad_user/vault/main.yml 
+#    - roles/win_ad_user/vault/main2.yml
   roles:
     - win_ad_user

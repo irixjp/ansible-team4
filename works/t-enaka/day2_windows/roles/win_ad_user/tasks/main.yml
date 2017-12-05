@@ -7,3 +7,4 @@
     password: "{{item.password}}"
   with_items: 
     - "{{user_info}}"
+  #no_log: True
