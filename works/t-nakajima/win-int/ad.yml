@@ -1,5 +1,6 @@
 ---
 - hosts: windows
+  vars_files:
+    - ./my_ad_vars.yml
   roles:
     - win_ad_install
-
