@@ -1,0 +1,9 @@
+---
+
+- name: Create a role to install Active Directory on Windows Server 2012.
+  hosts: windows
+  become: yes
+  roles:
+    - win_ad_install
+  vars_files: 
+    - my_ad_vars.yml

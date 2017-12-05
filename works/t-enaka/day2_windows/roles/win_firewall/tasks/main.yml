@@ -1,0 +1,14 @@
+#- name: firewall start
+#  tags: FWStart
+#  win_firewall:
+#    state: enabled
+
+- name: Create a role to add allow ingress traffic through Windows firewall
+  tags: FWRule
+  win_firewall_rule:
+    action: allow
+    direction: in
+    localport: "{{local_port}}"
+    name: "{{service_name}}"
+    protocol: "{{protocol_name}}"
+

@@ -1,0 +1,27 @@
+---
+user_info:
+  - name: james
+    firstname: James
+    surname: Jockey
+    password: redhat@123
+
+  - name: bill
+    firstname: Bill
+    surname: Gates
+    password: redhat@123
+
+  - name: mickey
+    firstname: Mickey
+    surname: Mouse
+    password: redhat@123
+
+  - name: donald
+    firstname: Donald
+    surname: Duck
+    password: redhat@123
+
+
+#{Name: 'james', FirstName: 'James', LastName: 'Jockey', Password: 'redhat@123', Email: 'james@ad1.${guid}.example.opentlc.com'}
+#{Name: 'bill', FirstName: 'Bill', LastName: 'Gates', Password: 'redhat@123', Email: 'bill@ad1.${guid}.example.opentlc.com'}
+#{Name: 'mickey', FirstName: 'Mickey', LastName: 'Mouse', Password: 'redhat@123', Email: 'mickey@ad1.${guid}.example.opentlc.com'}
+#{Name: 'donald', FirstName: 'Donald', LastName: 'Duck', Password: 'redhat@123', Email: 'donald@ad1.${guid}.example.opentlc.com'}

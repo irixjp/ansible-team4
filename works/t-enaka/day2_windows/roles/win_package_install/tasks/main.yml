@@ -1,0 +1,8 @@
+- name: Create a role to install packages on a Windows Server
+  tags: Install
+  win_chocolatey:
+    name: "{{item.name}}"
+    params: "{{item.params}}"
+  with_items:
+    - { name: "{{package_name}}", params: "{{parameters}}"}
+ 

@@ -1,0 +1,9 @@
+- name: win_domain_user
+  tags: win_domain_user
+  win_domain_user:
+    name: "{{item.name}}"
+    firstname: "{{item.firstname}}"
+    surname: "{{item.surname}}"
+    password: "{{item.password}}"
+  with_items: 
+    - "{{user_info}}"
