@@ -1,0 +1,6 @@
+--- 
+- name: index.html on {{ app_num }}
+  template:
+    src: index.html.{{ app_num }}
+    dest: /usr/share/tomcat/webapps/ansible/index.html
+

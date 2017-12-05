@@ -1,0 +1,32 @@
+--- 
+- name: Deploy 3tier Env
+  gather_facts: false
+  become: true
+  hosts: all # hosts
+  roles: 
+    - common
+
+- name: Deploy postgres 
+  gather_facts: false
+  become: true
+  hosts: appdbs
+  roles: 
+    -  postgres
+
+
+- name: Deploy apache and apps
+  gather_facts: false
+  become: true
+  hosts: apps
+  roles: 
+    - http
+    - tomcat
+    - { role: apps, app_num: app1 }
+    - { role: apps, app_num: app2 }
+
+- name: Deploy haproxy
+  gather_facts: false
+  become: true
+  hosts: frontends
+  roles: 
+    - haproxy
