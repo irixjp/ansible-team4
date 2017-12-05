@@ -1,0 +1,5 @@
+---
+- host: windows
+  roles:
+    - win_ad_install
+
