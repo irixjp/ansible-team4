@@ -1,0 +1,10 @@
+---
+- name: ad user add
+  win_domain_user: 
+    name: "{{ item.name }}"
+    firstname: "{{ item.firstname }}"
+    password: "{{ item.password }}"
+    email: "{{ item.email }}"
+
+  with_items:
+    - "{{ user_info }}"

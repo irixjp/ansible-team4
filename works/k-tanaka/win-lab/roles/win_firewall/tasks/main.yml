@@ -1,0 +1,13 @@
+---
+#- name: windows firewall
+#  win_firewall: 
+#    state: enabled
+
+- name: rule of windows firewall 
+  win_firewall_rule:
+    name: SSH
+    localport: "{{ local_port }}"
+    protocol: "{{ protocol_name }}"
+    action: allow
+    direction: in
+    enabled: yes

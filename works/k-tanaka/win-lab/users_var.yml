@@ -1,0 +1,9 @@
+---
+user_info: 
+  - {name: james, firstname: James, lastname: Jockey, password: redhat@123, email: james@ad1.513b.example.opentlc.com }
+  - {name: bill, firstname: Bill, lastname: Gates, password: redhat@123, email: bill@ad1.513b.example.opentlc.com }
+  - {name: mickey, firstname: Mickey, lastname: Mouse, password: redhat@123, email: mickey@ad1.513b.example.opentlc.com }
+  - {name: donald, firstname: Donald, lastname: Duck, password: redhat@123, email: donald@ad1.513b.example.opentlc.com }
+
+
+

@@ -1,0 +1,26 @@
+--- 
+- name: install AD-Domain-Services
+  win_feature: 
+    name: AD-Domain-Services
+    state: present
+  tags: 
+    - install_ad
+
+- name: Set up Active Directory Controller 
+  win_domain: 
+    dns_domain_name: "{{ ad_domain_name }}"
+    safe_mode_password: "{{ ansible_password }}"
+  tags: 
+    - setup_ad
+
+- name: reboot after configurations is completed
+  win_reboot: 
+  register: result
+  tags: 
+    - reboot
+    
+- name: Print out domain list after reboot is completed
+  win_shell: "nltest /dclist:{{ ad_domain_name }}"
+  when: result
+  tags: 
+    - print

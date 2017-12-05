@@ -1,0 +1,8 @@
+--- 
+- hosts: windows
+  vars_files:
+    - users_var.yml
+  
+  tasks:
+  roles: 
+    - win_ad_user
