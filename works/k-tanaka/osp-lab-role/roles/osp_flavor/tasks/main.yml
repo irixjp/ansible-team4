@@ -1,0 +1,8 @@
+  - name: Create tiny flavor
+    os_nova_flavor:
+     cloud: ospcloud
+     state: present
+     name: tiny
+     ram: 1024
+     vcpus: 1
+     disk: 10
