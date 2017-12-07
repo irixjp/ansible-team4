@@ -1,0 +1,26 @@
+- hosts: jumpbox
+  gather_facts: true
+  roles:
+   - osp_network
+   - osp_security
+   - osp_flavor
+   - osp_instance
+   - osp_fetch
+
+- hosts: webservers
+  gather_facts: false
+  become: yes
+  tasks:
+  - name: install apache/httpd
+    yum:
+      name: httpd
+      state: latest
+  - name: start and enable apache/httpd service
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+  - name: create default index.html
+    copy:
+     content: "Hello World"
+     dest: /var/www/html/index.html
