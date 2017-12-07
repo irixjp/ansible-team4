@@ -1,0 +1,9 @@
+webserver_name: frontend1
+databaseserver_name: appdb1
+apserver_name1: app1
+apserver_name2: app2
+flavor_name: m2.small
+webserver_group: webservers
+database_group: databaseservers
+apserver_group: apbaseservers
+deployment: dev
