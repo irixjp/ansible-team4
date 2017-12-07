@@ -1,0 +1,7 @@
+---
+
+- name: configurate_infra
+  hosts: jumpbox
+  gather_facts: false
+  roles:
+   - network

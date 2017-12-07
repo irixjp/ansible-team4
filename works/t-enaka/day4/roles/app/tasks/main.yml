@@ -1,0 +1,13 @@
+- name: copy static index.html to tomcat webapps/ansible/index.html
+  file:
+    path: /usr/share/tomcat/webapps/ansible
+    state: directory
+    owner: tomcat
+    group: tomcat
+    mode: 0644
+
+- name: copy static index.html to tomcat webapps/ansible/index.html
+  template:
+    src: index.html
+    dest: /usr/share/tomcat/webapps/ansible/index.html
+
