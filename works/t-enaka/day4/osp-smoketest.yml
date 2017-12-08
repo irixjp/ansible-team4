@@ -30,5 +30,5 @@
      register: result2
    - name: "Checking server availibility"
      uri:
-      url: http://"{{result.ansible_facts.openstack_servers.public_v4}}"
+      url: http://"{{result2.ansible_facts.openstack_servers.public_v4}}"
 
