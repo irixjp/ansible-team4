@@ -18,12 +18,12 @@
       group: "{{ item.metadata.deployment_name }}"
      with_items: "{{result.ansible_facts.openstack_servers}}"
 
-- hosts: jumpbox
+- hosts: webservers
   gather_facts: false
   become: yes
   tasks:
    - name: "Checking server availibility"
      uri:
       url: http://"{{inventory_hostname}}" 
-
+      delegate_to: jumpbox
 
