@@ -1,0 +1,13 @@
+Host workstation-6d22.rhpds.opentlc.com
+ Hostname workstation-6d22.rhpds.opentlc.com
+ IdentityFile /etc/ansible/openstack.pem
+ ForwardAgent yes
+ User cloud-user
+ StrictHostKeyChecking no
+ PasswordAuthentication no
+
+Host 10.10.10.*
+ User cloud-user
+ IdentityFile /etc/ansible/openstack.pem
+ ProxyCommand ssh -F ./ssh.cfg cloud-user@workstation-6d22.rhpds.opentlc.com -W %h:%p -vvv
+ StrictHostKeyChecking no
