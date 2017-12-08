@@ -30,7 +30,6 @@
      register: result2
    - name: "Checking server availibility"
      uri:
-       url: http://10.10.10.9
-#      url: http://"{{ item.public_v4 }}"
-#     with_items: "{{result2.ansible_facts.openstack_servers}}"
+      url: http://{{ item.public_v4 }}
+     with_items: "{{result2.ansible_facts.openstack_servers}}"
 
