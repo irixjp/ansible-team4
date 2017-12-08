@@ -1,5 +1,5 @@
 - hosts: jumpbox
-  gather_facts: folse
+  gather_facts: true
   tasks:
 
    - name: Fetch Instance Info
