@@ -23,6 +23,6 @@
   become: yes
   tasks:
    - name: "Checking server availibility"
-     uri:
-       url: http://"{{inventory_hostname}}"
+     shell: curl http://"{{inventory_hostname}}"
+
 
