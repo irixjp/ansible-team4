@@ -18,7 +18,7 @@
       group: "{{ item.metadata.deployment_name }}"
      with_items: "{{result.ansible_facts.openstack_servers}}"
 
-- hosts: webservers
+- hosts: jumpbox
   gather_facts: false
   become: yes
   tasks:
