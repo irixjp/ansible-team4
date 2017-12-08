@@ -24,6 +24,5 @@
   tasks:
    - name: "Checking server availibility"
      uri:
-      url: http://"{{webservers.inventory_hostname}}" 
-      delegate_to: 127.0.0.1
+      url: http://10.10.10.9
 
