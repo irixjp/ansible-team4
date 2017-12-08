@@ -25,5 +25,5 @@
    - name: "Checking server availibility"
      uri:
       url: http://"{{inventory_hostname}}" 
-      delegate_to: jumpbox
+      delegate_to: 127.0.0.1
 
