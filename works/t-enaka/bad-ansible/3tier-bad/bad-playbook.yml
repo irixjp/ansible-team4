@@ -27,7 +27,7 @@
   gather_facts: true
   become: true
   roles:
-   - { role: "./roles/postgres/geerlingguy.postgresql" }
+   - postgreSQL
 
 
 - name: deploy tomcat
