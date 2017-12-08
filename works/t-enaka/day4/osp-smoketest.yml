@@ -23,5 +23,6 @@
   gather_facts: false
   become: yes
   tasks
-    - url: https://"{{ inventory_hostname }}"
+    - uri: 
+       url: https://"{{ inventory_hostname }}"
 
