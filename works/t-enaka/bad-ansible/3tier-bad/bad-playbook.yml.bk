@@ -15,7 +15,7 @@
 
 - name: configuration
   tags: configuration
-  hosts: tag_AnsibleGroup_apps,tag_AnsibleGroup_appdbs,tag_AnsibleGroup_frontends,
+  hosts: internal:children
   gather_facts: false # remove later! speeds up testing
   become: true
   roles:
@@ -23,7 +23,7 @@
 
 - name: deploy postgres
   tags: postgres
-  hosts: tag_AnsibleGroup_appdbs
+  hosts: appdbs
   gather_facts: true
   become: true
   roles:
@@ -32,7 +32,7 @@
 
 - name: deploy tomcat
   tags: tomcat
-  hosts: tag_AnsibleGroup_apps
+  hosts: apps
   gather_facts: false
   become: true
   roles:
@@ -40,7 +40,7 @@
 
 - name: index.html on app
   tags: app
-  hosts: tag_AnsibleGroup_apps
+  hosts: apps
   gather_facts: false
   become: true
   roles:
@@ -48,7 +48,7 @@
 
 - name: deploy apache
   tags: apache
-  hosts: tag_AnsibleGroup_apps
+  hosts: apps
   gather_facts: false
   become: true
   roles:
@@ -57,7 +57,7 @@
 
 - name: deploy haproxy
   tags: haproxy
-  hosts: tag_AnsibleGroup_frontends
+  hosts: frontends
   gather_facts: false # remove later! speeds up testing
   become: true
   roles:
