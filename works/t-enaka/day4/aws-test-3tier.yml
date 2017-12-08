@@ -1,0 +1,38 @@
+- hosts: tag_AnsibleGroup_frontends
+  tags: haproxy
+  gather_facts: false
+  become: yes
+  roles:
+   - { role: "./roles/haproxy" }
+
+- hosts: tag_AnsibleGroup_frontends,tag_AnsibleGroup_appdbs,tag_AnsibleGroup_apps
+  gather_facts: false # remove later! speeds up testing
+  become: true
+  roles:
+   - { role: "./roles/base_configure" } 
+
+- hosts: tag_AnsibleGroup_appdbs
+  tags: postgres
+  gather_facts: true
+  become: true
+  roles:
+   - { role: "./roles/postgres/geerlingguy.postgresql" }
+
+- hosts: tag_AnsibleGroup_apps
+  tags: tomcat
+  gather_facts: false
+  become: true
+  roles:
+   - { role: "./roles/tomcat" }
+
+- hosts: tag_AnsibleGroup_apps
+  gather_facts: false
+  become: true
+  roles:
+   - { role: "./roles/app" }
+
+- hosts: tag_AnsibleGroup_apps
+  gather_facts: false
+  become: true
+  roles:
+  - { role: "./roles/apache" }
