@@ -19,10 +19,10 @@
      with_items: "{{result.ansible_facts.openstack_servers}}"
 
 - hosts: webservers
-  tags: haproxy
   gather_facts: false
   become: yes
-  tasks
-    - uri: 
-       url: https://"{{ inventory_hostname }}"
+  tasks:
+   - name: "Checking server availibility"
+     uri:
+       url: https://"{{inventory_hostname}}"
 
