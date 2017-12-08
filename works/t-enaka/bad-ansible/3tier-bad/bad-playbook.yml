@@ -15,7 +15,7 @@
 
 - name: configuration
   tags: configuration
-  hosts: all
+  hosts: internal:children
   gather_facts: false # remove later! speeds up testing
   become: true
   roles:
