@@ -22,7 +22,13 @@
   gather_facts: false
   become: yes
   tasks:
+   - name: Fetch Instance Info
+     os_server_facts:
+      cloud: ospcloud
+      region_name: RegionOne
+      server: frontend1
+     register: result2
    - name: "Checking server availibility"
      uri:
-      url: http://"{{inventory_hostaname}}"
+      url: http://"{{result.ansible_facts.openstack_servers.public_v4}}"
 
