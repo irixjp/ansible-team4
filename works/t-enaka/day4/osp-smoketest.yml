@@ -24,5 +24,5 @@
   tasks:
    - name: "Checking server availibility"
      uri:
-       url: https://"{{inventory_hostname}}"
+       url: http://"{{inventory_hostname}}"
 
