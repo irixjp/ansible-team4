@@ -25,7 +25,7 @@
   tags: postgres
   hosts: tag_AnsibleGroup_appdbs
   gather_facts: true
-  become: true
+  become: True
   roles:
    - postgreSQL
 
@@ -43,6 +43,7 @@
   hosts: tag_AnsibleGroup_apps
   gather_facts: false
   become: true
+  become_user: postgres
   roles:
    - { role: "./roles/app" }
 
