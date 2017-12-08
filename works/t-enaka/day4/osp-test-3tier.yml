@@ -23,7 +23,7 @@
   gather_facts: false
   become: yes
   roles:
-   - { role: "./roles/haproxy" }
+   - { role: "./roles/haproxy_osp" }
 
 - hosts: all
   gather_facts: false # remove later! speeds up testing
